@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Missing contract" });
   }
 
-  const url = `https://api.dexscreener.com/latest/dex/search/?q={contract_address}`;
+  const url = `https://api.dexscreener.com/latest/dex/tokens/${contract}`;
 
   try {
     const response = await fetch(url, {
